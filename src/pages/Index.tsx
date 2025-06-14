@@ -6,143 +6,159 @@ import { CheckCircle, Users, Target, TrendingUp, MessageCircle } from "lucide-re
 
 const Index = () => {
   return (
-    <div className="min-h-screen bg-background">
+    <div className="min-h-screen bg-background text-foreground">
       <Navigation />
       
       {/* Hero Section */}
-      <section className="bg-gradient-to-br from-primary/5 to-secondary/10 py-20">
-        <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-          <div className="text-center">
-            <h1 className="text-4xl md:text-6xl font-bold text-primary mb-6">
+      <section className="py-20 px-4 sm:px-6 lg:px-8">
+        <div className="max-w-4xl mx-auto text-center">
+          <div className="relative mb-8">
+            <div className="absolute top-0 left-1/2 transform -translate-x-1/2 -translate-y-8 w-32 h-1 bg-gradient-to-r from-yellow-400 to-orange-400 rounded animate-fadeIn"></div>
+            <h1 className="text-4xl md:text-6xl font-bold gradient-text mb-6 animate-fadeInUp">
               Accelerate Your Tech Leadership Career
             </h1>
-            <p className="text-xl text-muted-foreground mb-8 max-w-3xl mx-auto">
+            <p className="text-xl md:text-2xl text-white font-bold mb-8 animate-fadeInUp uppercase tracking-wide">
               Get that exciting promotion faster and successfully navigate your role with the 4P Leadership Compass program.
             </p>
-            <div className="flex flex-col sm:flex-row gap-4 justify-center">
-              <Button size="lg" className="px-8">
-                Start Your Journey
-              </Button>
-              <Button size="lg" variant="outline" className="px-8">
-                Learn More
-              </Button>
-            </div>
           </div>
         </div>
       </section>
 
       {/* Problem Section */}
-      <section className="py-20">
-        <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-          <div className="text-center mb-16">
-            <h2 className="text-3xl md:text-4xl font-bold text-primary mb-6">
-              Are You Facing These Challenges?
+      <section className="py-16 px-4 sm:px-6 lg:px-8">
+        <div className="max-w-4xl mx-auto">
+          <div className="glass-card golden-border rounded-2xl p-8 animate-fadeInUp">
+            <h2 className="text-3xl font-bold gradient-text mb-8 text-center relative pb-4 golden-underline">
+              Many of My Clients Are Ambitious Technology Leaders Who:
             </h2>
-          </div>
-          <div className="grid md:grid-cols-2 lg:grid-cols-3 gap-8">
-            {[
-              "Feel stuck or uncertain about your next career move",
-              "Dealing with conflict, high-pressure decisions, or team challenges",
-              "Struggling to navigate organization politics",
-              "Lack clarity and a roadmap for the next chapter of your career",
-              "Have an inner critic that is using up too much time",
-              "Want to strengthen confidence, communication, and leadership presence"
-            ].map((challenge, index) => (
-              <Card key={index} className="text-center">
-                <CardContent className="pt-6">
-                  <p className="text-muted-foreground">{challenge}</p>
-                </CardContent>
-              </Card>
-            ))}
+            <ul className="space-y-4 max-w-2xl mx-auto">
+              {[
+                "Feel stuck or uncertain about their next career move",
+                "Are dealing with conflict, high-pressure decisions, or team challenges",
+                "Struggling to navigate organization politics",
+                "Lack clarity and a roadmap for the next chapter of their career",
+                "Have an inner critic that is using up too much time",
+                "Want to strengthen their confidence, communication, and leadership presence"
+              ].map((challenge, index) => (
+                <li key={index} className="flex items-start text-white relative pl-8 py-2 hover:transform hover:translate-x-2 transition-transform duration-300">
+                  <span className="absolute left-0 text-yellow-400 font-bold">→</span>
+                  {challenge}
+                </li>
+              ))}
+            </ul>
           </div>
         </div>
       </section>
 
       {/* Solution Section - 4P Program */}
-      <section className="py-20 bg-secondary/10">
-        <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-          <div className="text-center mb-16">
-            <h2 className="text-3xl md:text-4xl font-bold text-primary mb-6">
+      <section className="py-16 px-4 sm:px-6 lg:px-8">
+        <div className="max-w-4xl mx-auto">
+          <div className="glass-card golden-border rounded-2xl p-8 animate-fadeInUp">
+            <h2 className="text-3xl font-bold gradient-text mb-4 text-center relative pb-4 golden-underline">
               The 4P Leadership Compass Program
             </h2>
-            <p className="text-xl text-muted-foreground max-w-3xl mx-auto">
+            <p className="text-center text-white font-medium text-lg mb-8">
               A 3-month intensive program to expand your leadership in four key dimensions
             </p>
-          </div>
-          <div className="grid md:grid-cols-2 lg:grid-cols-4 gap-8">
-            {[
-              {
-                icon: Target,
-                title: "Purpose",
-                description: "Gain clarity in complex situations and make confident decisions."
-              },
-              {
-                icon: Users,
-                title: "People",
-                description: "Navigate influence, organization politics, and work-life balance."
-              },
-              {
-                icon: MessageCircle,
-                title: "Presence",
-                description: "Develop leadership presence, influence, and communication skills to thrive."
-              },
-              {
-                icon: TrendingUp,
-                title: "Progress",
-                description: "Understand and plan how to make your next step successfully."
-              }
-            ].map((pillar) => (
-              <Card key={pillar.title} className="text-center">
-                <CardHeader>
-                  <pillar.icon className="w-12 h-12 mx-auto text-primary mb-4" />
-                  <CardTitle>{pillar.title}</CardTitle>
-                </CardHeader>
-                <CardContent>
-                  <CardDescription>{pillar.description}</CardDescription>
-                </CardContent>
-              </Card>
-            ))}
+            <div className="grid md:grid-cols-2 gap-6">
+              {[
+                {
+                  icon: Target,
+                  title: "Purpose",
+                  description: "Gain clarity in complex situations and make confident decisions."
+                },
+                {
+                  icon: MessageCircle,
+                  title: "Presence",
+                  description: "Develop the leadership presence, influence, and communication skills to thrive."
+                },
+                {
+                  icon: Users,
+                  title: "People",
+                  description: "Family, Navigating influence, organization politics, work-life balance."
+                },
+                {
+                  icon: TrendingUp,
+                  title: "Progress",
+                  description: "Understand and plan how to make this next step successfully."
+                }
+              ].map((pillar) => (
+                <div key={pillar.title} className="bg-white/5 rounded-lg p-6 hover-lift">
+                  <pillar.icon className="w-12 h-12 text-yellow-400 mb-4" />
+                  <h3 className="text-xl font-bold text-white mb-2">{pillar.title}</h3>
+                  <p className="text-gray-300">{pillar.description}</p>
+                </div>
+              ))}
+            </div>
           </div>
         </div>
       </section>
 
       {/* Results Section */}
-      <section className="py-20">
-        <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-          <div className="text-center mb-16">
-            <h2 className="text-3xl md:text-4xl font-bold text-primary mb-6">
+      <section className="py-16 px-4 sm:px-6 lg:px-8">
+        <div className="max-w-4xl mx-auto">
+          <div className="glass-card golden-border rounded-2xl p-8 animate-fadeInUp">
+            <h2 className="text-3xl font-bold gradient-text mb-8 text-center relative pb-4 golden-underline">
               What My Clients Achieve
             </h2>
+            <div className="space-y-4 max-w-2xl mx-auto">
+              {[
+                "Faster, clearer decision-making in high-pressure situations",
+                "Stronger leadership presence & influence in critical conversations",
+                "Sustainable career success without stress, controlling the pace"
+              ].map((result, index) => (
+                <div key={index} className="flex items-start text-white relative pl-8 py-2">
+                  <CheckCircle className="absolute left-0 w-6 h-6 text-green-400" />
+                  {result}
+                </div>
+              ))}
+            </div>
           </div>
-          <div className="grid md:grid-cols-3 gap-8">
-            {[
-              "Faster, clearer decision-making in high-pressure situations",
-              "Stronger leadership presence & influence in critical conversations",
-              "Sustainable career success without stress, controlling the pace"
-            ].map((result, index) => (
-              <Card key={index} className="text-center">
-                <CardContent className="pt-6">
-                  <CheckCircle className="w-12 h-12 mx-auto text-green-500 mb-4" />
-                  <p className="text-muted-foreground">{result}</p>
-                </CardContent>
-              </Card>
-            ))}
+        </div>
+      </section>
+
+      {/* Coaching Approach */}
+      <section className="py-16 px-4 sm:px-6 lg:px-8">
+        <div className="max-w-4xl mx-auto">
+          <div className="glass-card golden-border rounded-2xl p-8 animate-fadeInUp">
+            <h2 className="text-3xl font-bold gradient-text mb-4 text-center relative pb-4 golden-underline">
+              This Means
+            </h2>
+            <div className="space-y-4 max-w-2xl mx-auto">
+              {[
+                "Less second-guessing",
+                "Stronger leadership",
+                "More control over your career"
+              ].map((benefit, index) => (
+                <div key={index} className="bg-white/5 rounded-lg p-4 hover-lift">
+                  <div className="flex items-start text-white relative pl-8">
+                    <span className="absolute left-0 text-yellow-400 font-bold text-xl">✓</span>
+                    {benefit}
+                  </div>
+                </div>
+              ))}
+            </div>
           </div>
         </div>
       </section>
 
       {/* CTA Section */}
-      <section className="py-20 bg-primary text-primary-foreground">
-        <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 text-center">
-          <h2 className="text-3xl md:text-4xl font-bold mb-6">
-            Ready to Accelerate Your Career?
-          </h2>
-          <p className="text-xl mb-8 opacity-90">
-            If you're a tech executive or ambitious professional preparing for the next phase of your career, let's connect.
-          </p>
-          <Button size="lg" variant="secondary" className="px-8">
-            DM me "4P" to Learn More
-          </Button>
+      <section className="py-20 px-4 sm:px-6 lg:px-8">
+        <div className="max-w-4xl mx-auto text-center">
+          <div className="glass-card golden-border rounded-2xl p-8">
+            <h2 className="text-3xl md:text-4xl font-bold gradient-text mb-6">
+              Ready to Accelerate Your Career?
+            </h2>
+            <p className="text-xl text-white mb-8 font-medium">
+              If you're a tech executive or ambitious professional preparing for the next phase of your career, let's connect.
+            </p>
+            <Button 
+              size="lg" 
+              className="px-8 py-4 text-lg font-semibold bg-gradient-to-r from-yellow-400 to-orange-400 text-black hover:from-orange-400 hover:to-yellow-400 transform hover:scale-105 transition-all duration-300 shadow-lg hover:shadow-xl rounded-full uppercase tracking-wide"
+            >
+              DM me "4P" to Learn More
+            </Button>
+          </div>
         </div>
       </section>
     </div>

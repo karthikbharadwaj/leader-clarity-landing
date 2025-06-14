@@ -6,59 +6,47 @@ import { Users, Brain, Award, Lightbulb } from "lucide-react";
 
 const About = () => {
   return (
-    <div className="min-h-screen bg-background">
+    <div className="min-h-screen bg-background text-foreground">
       <Navigation />
       
       {/* Hero Section */}
-      <section className="py-20 bg-gradient-to-br from-primary/5 to-secondary/10">
-        <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-          <div className="max-w-4xl mx-auto text-center">
-            <h1 className="text-4xl md:text-5xl font-bold text-primary mb-6">
-              About Your Coach
-            </h1>
-            <p className="text-xl text-muted-foreground mb-8">
-              15 years in the trenches, building high performance tech teams and helping leaders gain career clarity
-            </p>
-          </div>
+      <section className="py-20 px-4 sm:px-6 lg:px-8">
+        <div className="max-w-4xl mx-auto text-center">
+          <h1 className="text-4xl md:text-5xl font-bold gradient-text mb-6 animate-fadeInUp">
+            About Your Coach
+          </h1>
+          <p className="text-xl text-white mb-8 font-medium">
+            15 years in the trenches, building high performance tech teams and helping leaders gain career clarity
+          </p>
         </div>
       </section>
 
       {/* Main Content */}
-      <section className="py-20">
-        <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-          <div className="grid lg:grid-cols-2 gap-12 items-center mb-16">
-            <div>
-              <h2 className="text-3xl font-bold text-primary mb-6">
-                I've Been in Your Shoes
-              </h2>
-              <div className="space-y-4 text-muted-foreground">
-                <p>
-                  I have been in the trenches, building high performance tech teams for the last 15 years. 
-                  I understand the unique challenges that technology leaders face because I've lived them.
-                </p>
-                <p>
-                  I have been working with AI way before it became mainstream and realize first hand its true 
-                  potential and where it's going. This gives me a unique perspective on the future of 
-                  technology leadership.
-                </p>
-                <p>
-                  As a side hustle, I'm an Executive Coach who helps tech leaders gain career clarity, 
-                  build confidence, and leverage executive presence to accelerate their careers.
-                </p>
-              </div>
-            </div>
-            <div className="bg-primary/5 p-8 rounded-lg">
-              <h3 className="text-2xl font-bold text-primary mb-4">My Mission</h3>
-              <p className="text-muted-foreground">
-                To help ambitious technology leaders overcome self-doubt, imposter syndrome, and anything 
-                getting in their way that they might not see. I help you get that exciting promotion faster 
-                and successfully navigate your role.
+      <section className="py-16 px-4 sm:px-6 lg:px-8">
+        <div className="max-w-4xl mx-auto">
+          <div className="glass-card golden-border rounded-2xl p-8 mb-12 animate-fadeInUp">
+            <h2 className="text-3xl font-bold gradient-text mb-6 relative pb-4 golden-underline">
+              I've Been in Your Shoes
+            </h2>
+            <div className="space-y-6 text-gray-300 text-lg leading-relaxed">
+              <p>
+                I have been in the trenches, building high performance tech teams for the last 15 years. 
+                I understand the unique challenges that technology leaders face because I've lived them.
+              </p>
+              <p>
+                I have been working with AI way before it became mainstream and realize first hand its true 
+                potential and where it's going. This gives me a unique perspective on the future of 
+                technology leadership.
+              </p>
+              <p>
+                As a side hustle, I'm an Executive Coach who helps tech leaders gain career clarity, 
+                build confidence, and leverage executive presence to accelerate their careers.
               </p>
             </div>
           </div>
 
           {/* Experience Cards */}
-          <div className="grid md:grid-cols-2 lg:grid-cols-4 gap-8 mb-16">
+          <div className="grid md:grid-cols-2 lg:grid-cols-4 gap-6 mb-12">
             {[
               {
                 icon: Users,
@@ -81,24 +69,20 @@ const About = () => {
                 description: "Proprietary coaching methodology"
               }
             ].map((item) => (
-              <Card key={item.title} className="text-center">
-                <CardHeader>
-                  <item.icon className="w-12 h-12 mx-auto text-primary mb-4" />
-                  <CardTitle>{item.title}</CardTitle>
-                </CardHeader>
-                <CardContent>
-                  <CardDescription>{item.description}</CardDescription>
-                </CardContent>
-              </Card>
+              <div key={item.title} className="glass-card rounded-lg p-6 text-center hover-lift">
+                <item.icon className="w-12 h-12 mx-auto text-yellow-400 mb-4" />
+                <h3 className="text-xl font-bold text-white mb-2">{item.title}</h3>
+                <p className="text-gray-300">{item.description}</p>
+              </div>
             ))}
           </div>
 
           {/* What I Help With */}
-          <div className="bg-secondary/10 p-8 rounded-lg">
-            <h3 className="text-3xl font-bold text-primary mb-8 text-center">
+          <div className="glass-card golden-border rounded-2xl p-8">
+            <h3 className="text-3xl font-bold gradient-text mb-8 text-center relative pb-4 golden-underline">
               What I Help Technology Leaders With
             </h3>
-            <div className="grid md:grid-cols-2 gap-6">
+            <div className="grid md:grid-cols-2 gap-4">
               {[
                 "Overcoming self-doubt and imposter syndrome",
                 "Navigating organizational politics effectively",
@@ -109,9 +93,9 @@ const About = () => {
                 "Balancing technical expertise with leadership skills",
                 "Creating sustainable career success without burnout"
               ].map((item, index) => (
-                <div key={index} className="flex items-start gap-3">
-                  <div className="w-2 h-2 bg-primary rounded-full mt-3 flex-shrink-0" />
-                  <p className="text-muted-foreground">{item}</p>
+                <div key={index} className="flex items-start gap-3 bg-white/5 rounded-lg p-4 hover-lift">
+                  <div className="w-2 h-2 bg-yellow-400 rounded-full mt-3 flex-shrink-0" />
+                  <p className="text-gray-300">{item}</p>
                 </div>
               ))}
             </div>
@@ -120,17 +104,22 @@ const About = () => {
       </section>
 
       {/* CTA Section */}
-      <section className="py-20 bg-primary text-primary-foreground">
-        <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 text-center">
-          <h2 className="text-3xl md:text-4xl font-bold mb-6">
-            Ready to Work Together?
-          </h2>
-          <p className="text-xl mb-8 opacity-90">
-            Let's connect and discuss how the 4P Leadership Compass can accelerate your career.
-          </p>
-          <Button size="lg" variant="secondary" className="px-8">
-            Schedule a Consultation
-          </Button>
+      <section className="py-20 px-4 sm:px-6 lg:px-8">
+        <div className="max-w-4xl mx-auto text-center">
+          <div className="glass-card golden-border rounded-2xl p-8">
+            <h2 className="text-3xl md:text-4xl font-bold gradient-text mb-6">
+              Ready to Work Together?
+            </h2>
+            <p className="text-xl text-white mb-8 font-medium">
+              Let's connect and discuss how the 4P Leadership Compass can accelerate your career.
+            </p>
+            <Button 
+              size="lg" 
+              className="px-8 py-4 text-lg font-semibold bg-gradient-to-r from-yellow-400 to-orange-400 text-black hover:from-orange-400 hover:to-yellow-400 transform hover:scale-105 transition-all duration-300 shadow-lg hover:shadow-xl rounded-full"
+            >
+              Schedule a Consultation
+            </Button>
+          </div>
         </div>
       </section>
     </div>

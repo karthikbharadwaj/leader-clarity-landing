@@ -26,38 +26,34 @@ const Testimonials = () => {
   ];
 
   return (
-    <div className="min-h-screen bg-background">
+    <div className="min-h-screen bg-background text-foreground">
       <Navigation />
       
-      <section className="py-20">
-        <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+      <section className="py-20 px-4 sm:px-6 lg:px-8">
+        <div className="max-w-4xl mx-auto">
           <div className="text-center mb-16">
-            <h1 className="text-4xl md:text-5xl font-bold text-primary mb-6">
+            <h1 className="text-4xl md:text-5xl font-bold gradient-text mb-6 animate-fadeInUp">
               Client Testimonials
             </h1>
-            <p className="text-xl text-muted-foreground max-w-3xl mx-auto">
+            <p className="text-xl text-gray-300">
               Hear from technology leaders who have transformed their careers through coaching
             </p>
           </div>
 
-          <div className="grid lg:grid-cols-1 gap-8 max-w-4xl mx-auto">
+          <div className="space-y-8">
             {testimonials.map((testimonial, index) => (
-              <Card key={index} className="p-6">
-                <CardHeader>
-                  <div className="flex items-center gap-2 mb-4">
-                    {[...Array(testimonial.rating)].map((_, i) => (
-                      <Star key={i} className="w-5 h-5 fill-yellow-400 text-yellow-400" />
-                    ))}
-                  </div>
-                  <CardTitle className="text-lg">{testimonial.name}</CardTitle>
-                  <CardDescription>{testimonial.role}</CardDescription>
-                </CardHeader>
-                <CardContent>
-                  <p className="text-muted-foreground leading-relaxed italic">
-                    "{testimonial.content}"
-                  </p>
-                </CardContent>
-              </Card>
+              <div key={index} className="glass-card golden-border rounded-2xl p-8 hover-lift">
+                <div className="flex items-center gap-2 mb-4">
+                  {[...Array(testimonial.rating)].map((_, i) => (
+                    <Star key={i} className="w-5 h-5 fill-yellow-400 text-yellow-400" />
+                  ))}
+                </div>
+                <h3 className="text-xl font-bold text-white mb-2">{testimonial.name}</h3>
+                <p className="text-yellow-400 mb-4 font-medium">{testimonial.role}</p>
+                <p className="text-gray-300 leading-relaxed italic text-lg">
+                  "{testimonial.content}"
+                </p>
+              </div>
             ))}
           </div>
         </div>

@@ -61,59 +61,64 @@ const FAQ = () => {
   ];
 
   return (
-    <div className="min-h-screen bg-background">
+    <div className="min-h-screen bg-background text-foreground">
       <Navigation />
       
-      <section className="py-20">
-        <div className="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8">
+      <section className="py-20 px-4 sm:px-6 lg:px-8">
+        <div className="max-w-4xl mx-auto">
           <div className="text-center mb-16">
-            <h1 className="text-4xl md:text-5xl font-bold text-primary mb-6">
+            <h1 className="text-4xl md:text-5xl font-bold gradient-text mb-6 animate-fadeInUp">
               Frequently Asked Questions
             </h1>
-            <p className="text-xl text-muted-foreground">
+            <p className="text-xl text-gray-300">
               Everything you need to know about the 4P Leadership Compass program
             </p>
           </div>
 
           <div className="space-y-4">
             {faqs.map((faq, index) => (
-              <Card key={index}>
+              <div key={index} className="glass-card rounded-lg overflow-hidden">
                 <Collapsible>
                   <CollapsibleTrigger 
                     className="w-full"
                     onClick={() => toggleItem(index)}
                   >
-                    <CardHeader className="flex flex-row items-center justify-between w-full">
-                      <CardTitle className="text-left text-lg">{faq.question}</CardTitle>
+                    <div className="flex items-center justify-between w-full p-6 text-left hover:bg-white/5 transition-colors">
+                      <h3 className="text-lg font-semibold text-white">{faq.question}</h3>
                       <ChevronDown 
-                        className={`w-5 h-5 transition-transform ${
+                        className={`w-5 h-5 text-yellow-400 transition-transform ${
                           openItems.includes(index) ? 'rotate-180' : ''
                         }`} 
                       />
-                    </CardHeader>
+                    </div>
                   </CollapsibleTrigger>
                   <CollapsibleContent>
-                    <CardContent className="pt-0">
-                      <p className="text-muted-foreground leading-relaxed">
+                    <div className="px-6 pb-6">
+                      <p className="text-gray-300 leading-relaxed">
                         {faq.answer}
                       </p>
-                    </CardContent>
+                    </div>
                   </CollapsibleContent>
                 </Collapsible>
-              </Card>
+              </div>
             ))}
           </div>
 
           <div className="text-center mt-16">
-            <h2 className="text-2xl font-bold text-primary mb-4">
-              Still Have Questions?
-            </h2>
-            <p className="text-muted-foreground mb-8">
-              I'm here to help. Reach out and let's discuss your specific situation.
-            </p>
-            <Button size="lg">
-              Contact Me
-            </Button>
+            <div className="glass-card golden-border rounded-2xl p-8">
+              <h2 className="text-2xl font-bold gradient-text mb-4">
+                Still Have Questions?
+              </h2>
+              <p className="text-gray-300 mb-8">
+                I'm here to help. Reach out and let's discuss your specific situation.
+              </p>
+              <Button 
+                size="lg"
+                className="px-8 py-4 text-lg font-semibold bg-gradient-to-r from-yellow-400 to-orange-400 text-black hover:from-orange-400 hover:to-yellow-400 transform hover:scale-105 transition-all duration-300 shadow-lg hover:shadow-xl rounded-full"
+              >
+                Contact Me
+              </Button>
+            </div>
           </div>
         </div>
       </section>
